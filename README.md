@@ -1,16 +1,34 @@
-# Ice Cream Management System 🍦
+# 🍦 Ice Cream Management System
 
-## Features
-- User login/register
-- Order management
-- Product view
+## 📌 Description
+This is a web-based Ice Cream Management System developed using PHP and MySQL.  
+It helps manage products, users, and orders efficiently.
 
-## Tech Used
-- PHP
-- MySQL
-- HTML/CSS
+---
 
-## How to run
-1. XAMPP start karo
-2. Project ko htdocs me daalo
-3. localhost pe run karo
+## 🚀 Features
+- User Registration & Login system
+- Admin Dashboard
+- Add / Edit / Delete Products
+- View Products
+- Place Orders
+- Order Management
+- Session Management (Login/Logout)
+
+---
+
+## 🛠️ Tech Stack
+- Frontend: HTML, CSS
+- Backend: PHP
+- Database: MySQL
+- Server: XAMPP
+
+---
+
+## ▶️ How to Run
+1. Install XAMPP
+2. Start Apache and MySQL
+3. Copy project folder to `htdocs`
+4. Import database in phpMyAdmin
+5. Open browser and run:
+   http://localhost/ice-cream-management-system
