@@ -32,3 +32,5 @@ It helps manage products, users, and orders efficiently.
 4. Import database in phpMyAdmin
 5. Open browser and run:
    http://localhost/ice-cream-management-system
+   ## 👨‍💻 Author
+- Chirag Gupta
