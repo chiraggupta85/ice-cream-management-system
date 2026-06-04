@@ -7,11 +7,11 @@ if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // 🔍 user fetch by email
+    
     $res = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
     $row = mysqli_fetch_assoc($res);
 
-    // 🔐 verify password
+    
     if($row && password_verify($password, $row['password'])){
         $_SESSION['user_id'] = $row['id'];
 
