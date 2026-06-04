@@ -2,7 +2,6 @@
 include("auth.php");
 include("db.php");
 
-// last order fetch
 $res = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC LIMIT 1");
 $row = mysqli_fetch_assoc($res);
 ?>
