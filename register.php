@@ -6,7 +6,6 @@ if(isset($_POST['register'])){
     $email = $_POST['email'];
     $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-
     mysqli_query($conn, "INSERT INTO users(name,email,password,role)
     VALUES('$name','$email','$pass','admin')");
 
@@ -25,11 +24,27 @@ if(isset($_POST['register'])){
 
     <style>
         body {
-            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            background: linear-gradient(135deg, skyblue, lightblue);
             height: 100vh;
         }
+
         .card {
             border-radius: 15px;
+            background-color: white;
+        }
+
+        h3 {
+            color: navy;
+        }
+
+        .btn-primary {
+            background-color: royalblue;
+            border-color: royalblue;
+        }
+
+        .btn-primary:hover {
+            background-color: dodgerblue;
+            border-color: dodgerblue;
         }
     </style>
 </head>
@@ -59,12 +74,14 @@ if(isset($_POST['register'])){
                 <input type="password" name="password" class="form-control" placeholder="Enter password" required>
             </div>
 
-            <button name="register" class="btn btn-primary w-100">Register</button>
+            <button name="register" class="btn btn-primary w-100">
+                Register
+            </button>
 
         </form>
 
         <p class="text-center mt-3">
-            Already have an account? 
+            Already have an account?
             <a href="login.php">Login</a>
         </p>
 
