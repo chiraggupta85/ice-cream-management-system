@@ -7,11 +7,9 @@ if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    
     $res = mysqli_query($conn, "SELECT * FROM users WHERE email='$email'");
     $row = mysqli_fetch_assoc($res);
 
-    
     if($row && password_verify($password, $row['password'])){
         $_SESSION['user_id'] = $row['id'];
 
@@ -33,11 +31,27 @@ if(isset($_POST['login'])){
 
     <style>
         body {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, royalblue, mediumpurple);
             height: 100vh;
         }
+
         .card {
             border-radius: 15px;
+            background-color: white;
+        }
+
+        h3 {
+            color: navy;
+        }
+
+        .btn-dark {
+            background-color: darkblue;
+            border-color: darkblue;
+        }
+
+        .btn-dark:hover {
+            background-color: blue;
+            border-color: blue;
         }
     </style>
 </head>
@@ -48,16 +62,14 @@ if(isset($_POST['login'])){
 
     <div class="card p-4 shadow" style="width: 400px;">
 
-        <h3 class="text-center mb-3">🔐 Welcome Back</h3>
+        <h3 class="text-center mb-3">  Welcome Back</h3>
 
-        <!-- Success message -->
         <?php if(isset($_GET['success'])){ ?>
             <div class="alert alert-success text-center">
                 Registered Successfully! Please Login
             </div>
         <?php } ?>
 
-        <!-- Error message -->
         <?php if(isset($error)){ ?>
             <div class="alert alert-danger text-center">
                 <?php echo $error; ?>
@@ -76,7 +88,9 @@ if(isset($_POST['login'])){
                 <input type="password" name="password" class="form-control" placeholder="Enter password" required>
             </div>
 
-            <button name="login" class="btn btn-dark w-100 fw-bold">Login</button>
+            <button name="login" class="btn btn-dark w-100 fw-bold">
+                Login
+            </button>
 
         </form>
 
@@ -90,4 +104,3 @@ if(isset($_POST['login'])){
 
 </body>
 </html>
-
