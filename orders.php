@@ -2,14 +2,12 @@
 include("auth.php");
 include("db.php");
 
-// 🔥 Delete All Orders
 if(isset($_GET['delete_all'])){
     mysqli_query($conn, "DELETE FROM orders");
     header("Location: orders.php");
     exit();
 }
 
-// 🔥 Delete Single Order
 if(isset($_GET['delete'])){
     $id = $_GET['delete'];
     mysqli_query($conn, "DELETE FROM orders WHERE id='$id'");
@@ -17,7 +15,6 @@ if(isset($_GET['delete'])){
     exit();
 }
 
-// 🔥 Fetch Orders
 $res = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC");
 ?>
 
@@ -36,7 +33,7 @@ $res = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC");
 
     <h2 class="text-center mb-4">All Orders</h2>
 
-    <!-- 🔥 Delete All Button -->
+    <!--  Delete All Button -->
     <div class="text-end mb-3">
         <a href="orders.php?delete_all=true" 
         class="btn btn-danger"
@@ -69,7 +66,7 @@ $res = mysqli_query($conn, "SELECT * FROM orders ORDER BY id DESC");
                 <td>₹<?php echo $row['total_price']; ?></td>
                 <td><?php echo $row['order_date']; ?></td>
                 <td>
-                    <!-- 🔥 Single Delete -->
+                    <!--  Single Delete -->
                     <a href="orders.php?delete=<?php echo $row['id']; ?>" 
                     class="btn btn-danger btn-sm"
                     onclick="return confirm('Delete this order?');">
