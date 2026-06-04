@@ -3,11 +3,9 @@ include("db.php");
 
 $id = $_GET['id'];
 
-// old data fetch
 $res = mysqli_query($conn, "SELECT * FROM products WHERE id='$id'");
 $data = mysqli_fetch_assoc($res);
 
-// update
 if(isset($_POST['update'])){
     $name = $_POST['name'];
     $price = $_POST['price'];
