@@ -2,13 +2,11 @@
 include("auth.php");
 include("db.php");
 
-// Get products
 $res = mysqli_query($conn, "SELECT * FROM products");
 
 $price = "";
 $total = "";
 
-// Get price
 if(isset($_POST['get_price'])){
     $product = $_POST['product_name'];
 
@@ -25,7 +23,7 @@ if(isset($_POST['get_price'])){
     }
 }
 
-// Place Order
+
 if(isset($_POST['order'])){
     $customer = $_POST['customer_name'];
     $product = $_POST['product_name'];
