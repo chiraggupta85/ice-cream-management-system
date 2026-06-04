@@ -24,7 +24,7 @@ $row = mysqli_fetch_assoc($res);
 <div class="container mt-5">
     <div class="card p-4 shadow text-center">
 
-        <h2>🧾 Ice Cream Bill</h2>
+        <h2> Ice Cream Bill</h2>
         <hr>
 
         <p><b>Customer:</b> <?php echo $row['customer_name']; ?></p>
